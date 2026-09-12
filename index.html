@@ -5,10 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyper3d Coupons & Promo Codes - Coupon Here</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Hiệu ứng viền nổi bật khi đưa chuột vào phần tử có thể chỉnh sửa */
+    [contenteditable="true"]:hover {
+      outline: 2px dashed #10b981;
+      outline-offset: 2px;
+      cursor: text;
+    }
+    [contenteditable="true"]:focus {
+      outline: 2px solid #059669;
+      outline-offset: 2px;
+      background-color: rgba(16, 185, 129, 0.05);
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800 antialiased min-h-screen flex flex-col justify-between">
 
-  <div>
+  <!-- THANH CÔNG CỤ CHỈNH SỬA VÀ LƯU (FIXED BOTTTOM BAR) -->
+  <div id="editor-toolbar" contenteditable="false" class="fixed bottom-4 right-4 z-50 bg-gray-900 text-white p-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-gray-700">
+    <div class="text-xs px-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1"></span>
+      <span class="font-semibold text-emerald-400">Chế độ chỉnh sửa trực tiếp</span>
+    </div>
+    <button onclick="copyHTMLCode()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-1 shadow">
+      📋 Sao chép Code đã sửa
+    </button>
+  </div>
+
+  <!-- NỘI DUNG TRANG WEB (BẮT ĐẦU CHỈNH SỬA TỪ ĐÂY) -->
+  <div contenteditable="true" spellcheck="false">
+    
     <!-- Top Announcement Bar -->
     <div class="bg-emerald-600 text-white text-xs text-center py-2 px-4 flex items-center justify-center gap-2">
       <span>🔒 Check out this month's upcoming sales and never miss a great deal again</span>
@@ -229,64 +255,87 @@
       </div>
 
     </div>
+
+    <!-- FULL FOOTER (DARK THEME) -->
+    <footer class="bg-[#0b0f19] text-gray-400 text-sm py-12 px-6 border-t border-gray-800 mt-16">
+      <div class="max-w-7xl mx-auto space-y-10">
+        
+        <!-- Grid 4 Cột -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-gray-800">
+          
+          <!-- Cột 1 -->
+          <div class="space-y-4">
+            <div class="text-xl font-bold text-white tracking-wide">Coupon <span class="text-emerald-500">Here</span></div>
+            <p class="leading-relaxed text-xs">
+              Discover and shop for the best products and services. Make confident decisions with our professional reviews and verified coupon codes.
+            </p>
+          </div>
+
+          <!-- Cột 2 -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-xs">
+              <li><a href="#" class="hover:text-white transition">About Us</a></li>
+              <li><a href="#" class="hover:text-white transition">Contact</a></li>
+              <li><a href="#" class="hover:text-white transition">Sitemap</a></li>
+              <li><a href="#" class="hover:text-white transition">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 3 -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-xs">
+              <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
+              <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 4 -->
+          <div class="space-y-4 text-xs">
+            <h3 class="text-white font-semibold text-sm">Contact</h3>
+            <div>
+              <strong class="text-gray-200 block">Mailing Address:</strong>
+              <p class="mt-1">10441 Circulo De Zapata<br>Fountain Valley, California 92708<br>United States</p>
+            </div>
+            <p>📧 <a href="mailto:contact@couponhere.com" class="hover:text-white">contact@couponhere.com</a></p>
+          </div>
+
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="flex flex-col md:flex-row justify-between items-center text-xs gap-2">
+          <p>© 2026 couponhere.com. All rights reserved.</p>
+          <p>Reproduction in whole or in part is strictly prohibited.</p>
+        </div>
+
+      </div>
+    </footer>
+
   </div>
 
-  <!-- FULL FOOTER (DARK THEME) -->
-  <footer class="bg-[#0b0f19] text-gray-400 text-sm py-12 px-6 border-t border-gray-800 mt-16">
-    <div class="max-w-7xl mx-auto space-y-10">
-      
-      <!-- Grid 4 Cột -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-gray-800">
-        
-        <!-- Cột 1 -->
-        <div class="space-y-4">
-          <div class="text-xl font-bold text-white tracking-wide">Coupon <span class="text-emerald-500">Here</span></div>
-          <p class="leading-relaxed text-xs">
-            Discover and shop for the best products and services. Make confident decisions with our professional reviews and verified coupon codes.
-          </p>
-        </div>
+  <!-- SCRIPT HỖ TRỢ COPIED MÃ NGUỒN SAU KHI SỬA TRỰC TIẾP -->
+  <script>
+    function copyHTMLCode() {
+      // Ẩn thanh công cụ tạm thời để không bị tính vào code nguồn
+      const toolbar = document.getElementById('editor-toolbar');
+      toolbar.style.display = 'none';
 
-        <!-- Cột 2 -->
-        <div>
-          <h3 class="text-white font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-white transition">About Us</a></li>
-            <li><a href="#" class="hover:text-white transition">Contact</a></li>
-            <li><a href="#" class="hover:text-white transition">Sitemap</a></li>
-            <li><a href="#" class="hover:text-white transition">Partner With Us</a></li>
-          </ul>
-        </div>
+      // Lấy toàn bộ mã HTML của tài liệu
+      const htmlCode = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
-        <!-- Cột 3 -->
-        <div>
-          <h3 class="text-white font-semibold mb-4">Legal</h3>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#" class="hover:text-white transition">Terms of Use</a></li>
-            <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
-          </ul>
-        </div>
+      // Hiện lại thanh công cụ
+      toolbar.style.display = 'flex';
 
-        <!-- Cột 4 -->
-        <div class="space-y-4 text-xs">
-          <h3 class="text-white font-semibold text-sm">Contact</h3>
-          <div>
-            <strong class="text-gray-200 block">Mailing Address:</strong>
-            <p class="mt-1">10441 Circulo De Zapata<br>Fountain Valley, California 92708<br>United States</p>
-          </div>
-          <p>📧 <a href="mailto:contact@couponhere.com" class="hover:text-white">contact@couponhere.com</a></p>
-        </div>
-
-      </div>
-
-      <!-- Bản quyền -->
-      <div class="flex flex-col md:flex-row justify-between items-center text-xs gap-2">
-        <p>© 2026 couponhere.com. All rights reserved.</p>
-        <p>Reproduction in whole or in part is strictly prohibited.</p>
-      </div>
-
-    </div>
-  </footer>
+      // Sao chép vào bộ nhớ tạm (Clipboard)
+      navigator.clipboard.writeText(htmlCode).then(() => {
+        alert('✅ Đã sao chép toàn bộ mã HTML mới sau khi chỉnh sửa vào Clipboard! Hãy dán lại vào GitHub.');
+      }).catch(err => {
+        alert('Chưa thể sao chép tự động, hãy thử lại.');
+      });
+    }
+  </script>
 
 </body>
 </html>
